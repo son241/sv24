@@ -13,8 +13,8 @@ public class Node {
     Person info;
     Node right, left;
 
-    public Node(String ID, String name, int age) {
-        info = new Person(ID, name, age);
+    public Node(String name, int age) {
+        info = new Person(name, age);
         right = left = null;
     }
     

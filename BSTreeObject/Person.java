@@ -10,25 +10,16 @@ package BSTreeObject;
  * @author Admin
  */
 public class Person {
-    private String ID;
+
     private String name;
     private int age;
 
     public Person() {
     }
 
-    public Person(String ID, String name, int age) {
-        this.ID = ID;
+    public Person(String name, int age) {
         this.name = name;
         this.age = age;
-    }
-
-    public String getID() {
-        return ID;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
     }
 
     public String getName() {
@@ -49,7 +40,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "(" + ID + ", " + name + ", " + age + ')';
+        return "(" + name + ", " + age + ')';
     }
-    
+
 }
