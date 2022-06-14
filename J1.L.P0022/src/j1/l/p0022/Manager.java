@@ -145,23 +145,20 @@ public class Manager implements IManager {
 
     @Override
     public void searchByName(int type, String name) {
-        name = name.toLowerCase();
-        name = name.substring(0, 1).toUpperCase() + name.substring(1);
         ArrayList<String> found = new ArrayList<String>();
+        int count = 0;
         for (Candidate item : list) {
             if (item.getCandidateType() == type && item.getName().toLowerCase().contains(name.toLowerCase())) {
-                found.add(item.toString());
+                count++;
+                if (count == 1) {
+                    System.out.println("The candidate found:");
+                }
+                System.out.println(item.toString());
             }
         }
-        if (found.size() > 0) {
-            System.out.println("The candidate found:");
-            for (String item : found) {
-                System.out.println(item);
-            }
-            found.clear();
-            return;
+        if (count == 0) {
+            System.out.println("Not found!");
         }
-        System.out.println("Not found!");
     }
 
     @Override
