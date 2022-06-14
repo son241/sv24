@@ -23,13 +23,31 @@ public class Main {
                           D          E
                                      
         */
-        tree.insert("C", 34);
-        tree.insert("A", 21);
-        tree.insert("D", 24);
-        tree.insert("E", 14);
-        tree.insert("W", 28);
-        tree.insert("K", 20);
-        tree.insert("T", 17);
+        tree.insertIfNotStartWithB("J", 10);
+        tree.insertIfNotStartWithB("F", 7);
+        tree.insertIfNotStartWithB("P", 9);
+        tree.insertIfNotStartWithB("D", 7);
+        tree.insertIfNotStartWithB("G", 8);
+        tree.insertIfNotStartWithB("L", 8);
+        tree.insertIfNotStartWithB("V", 8);
+        tree.insertIfNotStartWithB("C", 8);
+        tree.insertIfNotStartWithB("N", 8);
+        tree.insertIfNotStartWithB("S", 8);
+        tree.insertIfNotStartWithB("X", 8);
+        tree.insertIfNotStartWithB("Q", 8);
+        tree.insertIfNotStartWithB("U", 8);
+        System.out.println(tree.getHeight());
+        tree.printBalanceFactor();
+        //tree.printBalanceFactor();
+//        tree.breadth();
+//        tree.singleBalance();
+//        tree.breadth();
+        //tree.printBalanceFactor();
+        //System.out.println(tree.getHeight(tree.search("E")));
+        //System.out.println("Count: " + tree.count());
+//        tree.insert("K", 20);
+//        tree.insert("T", 17);
+        //tree.writeFile();
         //tree.delete("W");
         //tree.rotateLeft(tree.search("C"));
         //tree.breadth();

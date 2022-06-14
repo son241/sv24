@@ -26,7 +26,7 @@ public class MyTree {
         return root == null;
     }
 
-    void insert(String name, int age) {
+    void insertIfNotStartWithB(String name, int age) {
         if (name.substring(0, 1).equalsIgnoreCase("B")) {
             return;
         }
@@ -197,11 +197,47 @@ public class MyTree {
             return 0;
         }
         //vist(p);
-        return findMax(getHeight(p.left), getHeight(p.right)) + 1;
+        return findMax(getHeight(p.right), getHeight(p.left)) + 1;
     }
 
     public int getHeight() {
         return getHeight(root);
+    }
+
+    int height(Node p) {
+        if (p == null) {
+            return 0;
+        } else {
+            int lDepth = height(p.left);//compute the depth of each subtree
+            int rDepth = height(p.right);
+            if (lDepth > rDepth) {
+                return (lDepth + 1);//use the larger one
+            } else {
+                return (rDepth + 1);
+            }
+        }
+    }
+    
+    public void printBalanceFactor(){
+
+        MyQueue q = new MyQueue();
+        q.enqueue(root);
+        Node p;
+        while (!q.isEmpty()) {
+            p = (Node) q.dequeue();
+            System.out.println(p.info.toString() + ": " + getBalanceFactor(p) + "\t");
+            if (p.left != null) {
+                q.enqueue(p.left);
+            }
+            if (p.right != null) {
+                q.enqueue(p.right);
+            }
+        }
+        System.out.println("");
+    }
+    
+    public int getBalanceFactor(Node p){
+        return getHeight(p.right) - getHeight(p.left);
     }
 
     //10. Delete
@@ -302,7 +338,7 @@ public class MyTree {
 
         if (first <= last) {
             int middle = (first + last) / 2;
-            insert(data[middle].info.getName(), data[middle].info.getAge());
+            insertIfNotStartWithB(data[middle].info.getName(), data[middle].info.getAge());
             singleBalance(data, first, middle - 1);
             singleBalance(data, middle + 1, last);
         }
@@ -387,7 +423,7 @@ public class MyTree {
         }
     }
 
-    public void delteByBreath() {
+    public void delte2ndNodeGreaterAgeAverageByBreath() {
         int count = 0;
         MyQueue q = new MyQueue();
         q.enqueue(root);
@@ -434,23 +470,25 @@ public class MyTree {
         }
         store += getcontent(p.left) + getcontent(p.right);
         return store;
-
-//        if (p.info.getAge() < ageAverage()) {
-//            out.write(p.info.toString());
-//            out.close();
-//        }
     }
 
-    int count = 0;
+    public void writeFile() throws IOException {
+        File source = new File("q2.txt");
+        FileWriter out = new FileWriter(source);
+        out.write(getcontent(root));
+        out.close();
+    }
+
+    int countRightChild = 0;
 
     public void rotateByPreOrder(Node p) {
         if (p == null) {
             return;
         }
         if (p.right != null) {
-            count++;
+            countRightChild++;
         }
-        if (count == 3) {
+        if (countRightChild == 3) {
             rotateLeft(p);
             return;
         }
