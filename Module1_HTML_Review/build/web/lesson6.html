@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .first-table {
+                width: 100%
+            }
+
+            .second-table {
+                width: 60%;
+                margin-top: 32px;
+            }
+
+            table, th, td {
+                border: 1px solid black;
+            }
+
+            .modal {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: fixed;
+                background-color: rgba(0, 0, 0, 0.2);
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: none;
+            }
+
+            .open{
+                display: block;
+                display: flex;
+            }
+
+            .result {
+                /*display: none;*/
+                width: 60%;
+                height: 400px;
+                text-align: center;
+                background-color: white;
+                position: relative;
+                box-shadow: -8px -6px 10px 0px rgba(160,189,194,0.75);
+                animation: modalFadeIn ease 0.5s;
+            }
+
+            .result h1 {
+                margin: 50px;
+            }
+
+            .result table {
+                width: 85%;
+                margin: 0 auto;
+            }
+
+            .result table,th,td {
+                border: 1px solid grey;
+                border-collapse: collapse;
+            }
+
+            .result button {
+                position: absolute;
+                font-size: 25px;
+                bottom: 40px;
+                right: 35px;
+                background: RGB(230,101,80);
+                color: white;
+                border: unset;
+                border-radius: 5px
+            }
+
+            .result button:hover {
+                opacity: 0.9;
+                cursor: pointer;
+            }
+
+            @keyframes modalFadeIn {
+                from {
+                    opacity: 0.1;
+                    transform: translateY(-180px); 
+                }
+                
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <table class="first-table">
+            <tr>
+                <th colspan="2">GRADE TABLE CLASS SE1641</th>
+            </tr>
+
+            <tr>
+                <th>Last name and first name</th>
+                <th>Math Grade</th>
+            </tr>
+
+            <tr>
+                <td>Tran Ha</td>
+                <td>7.6</td>
+            </tr>
+
+            <tr>
+                <td>Pham Thu</td>
+                <td>8.9</td>
+            </tr>
+
+            <tr>
+                <td>Nguyen Mai</td>
+                <td>6.5</td>
+            </tr>
+        </table>
+
+        <table class="second-table">
+            <tr>
+                <th rowspan="2">Sum</th>
+                <td>Rather</td>
+                <td>Great</td> 
+            </tr>           
+            <tr>
+                <td>2</td>
+                <td>1</td>
+            </tr>
+        </table>
+
+        <button class="test-btn">-->Test result</button>
+
+        <div class="modal">
+            <div class="result">
+                <h1>KẾT QUẢ THI</h1>
+                <table>
+                    <tr>
+                        <th rowspan="2">TT</th>
+                        <th rowspan="2">Họ và tên sinh viên</th>
+                        <th colspan="2">Kết quả thi</th>
+                    </tr>
+
+                    <tr>
+                        <th>Lý thuyết</th>
+                        <th>Thực hành</th>
+                    </tr>
+
+                    <tr>
+                        <td>01</td>
+                        <td>Trần Bình Minh</td>
+                        <td>9</td>
+                        <td>10</td>
+                    </tr>
+
+                    <tr>
+                        <td>02</td>
+                        <td>Nguyễn Quang Hùng</td>
+                        <td>10</td>
+                        <td>8</td>
+                    </tr>
+                </table>
+                <button class="close-btn">Close</button>
+            </div>
+        </div>
+
+        <script>
+            var testBtn = document.querySelector('.test-btn');
+            var closeBtn = document.querySelector('.close-btn');
+            var modal = document.querySelector('.modal');
+            var result = document.querySelector('result')
+            testBtn.addEventListener('click', function (e) {
+                modal.setAttribute('class', 'modal open')
+            });
+            closeBtn.addEventListener('click', function () {
+                modal.setAttribute('class', 'modal')
+            });
+            modal.addEventListener('click', function (){
+                modal.setAttribute('class', 'modal')
+            })
+        </script>
+    </body>
+</html>

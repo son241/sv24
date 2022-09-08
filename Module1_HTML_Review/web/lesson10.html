@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            * {
+                margin: 0;
+            }
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0;
+                padding: 0;
+            }
+
+            .col-15 {
+                width: 15%;
+            }
+
+            .col-25 {
+                width: 25%;
+            }
+
+            .col-75 {
+                width: 75%;
+            }
+
+            .col-85 {
+                width: 85%
+            }
+
+            .item-1 {
+                height: 300px;
+                background-color: red;
+            }
+
+            .item-2 {
+                height: 300px;
+                background-color: yellow
+            }
+            .header-right {
+                background-image: url("./assets/cut1.jpg")
+            }
+            img {
+                width: 100%;
+            }
+
+            .body-left {
+                display: flex;
+                align-items: center;
+                background-color: red;
+                height: 500px
+            }
+
+            .body-right {
+                background-color: yellow;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .body-right form {
+                padding: 0 32px;
+            }
+
+            .m-16 {
+                margin: 16px 0;
+            }
+
+            .col-10 {
+                width: 10%
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-15 header-left">
+                    <img src="./assets/og-image.png" alt="alt"/>
+                </div>
+
+                <div class="col-85 header-right">
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-15 body-left">
+                    <ul>
+                        <li>News in day</li>
+                        <li>Football</li>
+                        <li>Entertainment</li>
+                        <li>Wealthy</li>
+                    </ul>
+                </div>
+                <div class="col-85 body-right">
+                    <form action="action">
+                        <div class="row m-16">
+                            <div class="col-10">
+                                <label for="name">User name</label>
+                            </div>
+
+                            <div class="col-75">
+                                <input type="text" name="name" id="name">
+                            </div>
+                        </div>
+
+                        <div class="row m-16">
+                            <div class="col-10">
+                                <label for="password">Password</label>
+                            </div>
+
+                            <div class="col-75">
+                                <input type="password" name="name" id="password">
+                            </div>
+                        </div>
+
+                        <div class="row m-16">
+                            <div class="col-10">
+                                <label for="content">Send content</label>
+                            </div>
+
+                            <div class="col-75">
+                                <textarea id="content" name="name" rows="5" cols="20"></textarea>
+                            </div>
+                        </div>   
+
+                        <div class="row m-16">
+                            <div class="col-10">
+                                <label for="file">Attach file</label>
+                            </div>
+
+                            <div class="col-75">
+                                <input type="file" name="name" id="file">
+
+                                <br>
+                                <div class="m-16">
+                                    <button>Submit</button>                     
+                                    <button>Reset</button>
+                                </div>
+                            </div>
+                        </div>   
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

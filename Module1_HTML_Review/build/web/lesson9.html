@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .text-center {
+                text-align: center !important;
+            }
+
+            .row {
+                display: flex;
+                
+            }
+
+            .col-3 {
+                width: 10%;
+                float: left;
+                display: flex;
+                flex-direction: column;
+                
+            }
+            
+            .col-7 {
+                width: 90%;
+                float: left;
+                display: flex;
+                flex-direction: column
+            }
+            
+            label {
+                margin: 8px;
+            }
+            
+            input, select {
+                margin: 8px;
+                width: 30%
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header text-center">
+                <h1>INFORMATION DISCLOSURE</h1>
+            </div>
+            <div class="form row">
+                <div class="col-3">
+                    <label for="name">Enter name</label>
+                    <label for="birthday">Enter birthday</label>
+                    <label for="address">Enter address</label>
+                    <p style="margin: auto 0">Courses:</p>
+                    <div style="margin-bottom: 10px">Teaching quality:</div>
+                </div>
+                <div class="col-7">
+                    <input type="text" name="name" id="name" >
+                    <input type="text" name="birthday" id="birthday" >
+                    <input type="text" name="address" id="address" style="width: 50%"> 
+                    <div style="border: 1px solid black; margin: 8px; width: 6%">
+                        <p style="margin: 0; text-align: center">English<br>Japanese<br>Chinese<br>Korean<br>Office<br>Web design<br>Java</p>
+                    </div>
+                    <select style="width: 10%">
+                        <option value="A+">Very good</option>
+                        <option value="A">Good</option>
+                        <option value="B">Normal</option>
+                        <option value="C">Bad</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="comment" style="margin-top: 8px; font-weight: 500">
+                <label for="comments">Other comments</label>
+                <br>
+                <textarea id="comments" name="name" rows="5" cols="80" style="width: 562px; height: 66px;"></textarea>
+            </div>
+            <div class="button">
+                <button>Send</button>
+                <button>Reset</button>
+            </div>
+        </div>
+    </body>
+</html>
